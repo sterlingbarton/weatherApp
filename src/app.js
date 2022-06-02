@@ -51,6 +51,8 @@ function returnCity(event) {
     currentHigh.textContent = `${tempMax}°F  |`;
     let currentLow = document.querySelector(".low");
     currentLow.textContent = `${tempMin}°F`;
+    let description = document.querySelector(".description");
+    description.textContent = response.data.weather[0].description;
   });
   searchInput.value = "";
 }
