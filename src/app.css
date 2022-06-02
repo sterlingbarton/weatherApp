@@ -42,6 +42,11 @@ h1:hover {
   padding: 5px 10px;
   margin: 10px auto 0;
 }
+.convert {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 10px auto 0;
+}
 
 .current-date {
   font-weight: 300;
@@ -50,6 +55,7 @@ h1:hover {
 .description {
   font-weight: 200;
   line-height: 1.5;
+  text-transform: capitalize;
 }
 
 #search {

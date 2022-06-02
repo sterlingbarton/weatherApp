@@ -84,3 +84,22 @@ function getLocation() {
 
 let current = document.querySelector(".location");
 current.addEventListener("click", getLocation);
+
+let isFarenheight = true;
+function convert() {
+  isFarenheight = !isFarenheight;
+  let high = document.querySelector(".high");
+  let low = document.querySelector(".low");
+  let highTemp = 80;
+  let lowTemp = 65;
+  if (isFarenheight) {
+    high.textContent = `${highTemp}°F`;
+    low.textContent = `${lowTemp}°F`;
+  } else {
+    high.innerHTML = `${highTemp - 32}°C`;
+    low.innerHTML = `${lowTemp - 32}°C`;
+  }
+}
+
+let convertBtn = document.querySelector(".convert");
+convertBtn.addEventListener("click", convert);
