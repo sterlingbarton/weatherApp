@@ -153,9 +153,8 @@ h1:hover {
 }
 
 .github {
-  position: relative;
-  left: 52px;
-  top: 10px;
+  display: block;
+  text-align: center;
 }
 @media (min-width: 200px) {
   .container {
@@ -236,7 +235,7 @@ h1:hover {
 
 @media (min-width: 768px) {
   .container {
-    margin-top: 45px;
+    margin-top: 30px;
     padding-bottom: 20px;
   }
   .current {
