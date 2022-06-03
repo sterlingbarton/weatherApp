@@ -1,5 +1,7 @@
 let icon = document.querySelector("img");
 
+getLocation();
+
 let now = new Date();
 let days = [
   "Sunday",
@@ -66,8 +68,6 @@ function returnCity(event) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-    let convertBtn = document.querySelector(".convert");
-    convertBtn.style.visibility = "visible";
   });
   searchInput.value = "";
 }
@@ -90,6 +90,19 @@ function showTemp(position) {
     currentHigh.textContent = `${tempMax}°F  | `;
     let currentLow = document.querySelector(".low");
     currentLow.textContent = `${tempMin}°F`;
+    let description = document.querySelector(".description");
+    description.textContent = response.data.weather[0].description;
+    let humidity = document.querySelector(".humidity");
+    humidity.textContent = `Humidity: ${response.data.main.humidity}%`;
+    let windSpeedElement = document.querySelector(".wind-speed");
+    let windSpeed = Math.round(response.data.wind.speed);
+    windSpeedElement.textContent = `Wind: ${windSpeed}mph`;
+    let icon = document.querySelector("img");
+    icon.style.visibility = "visible";
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   });
 }
 
