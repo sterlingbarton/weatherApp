@@ -48,11 +48,16 @@ function returnCity(event) {
     let tempMin = Math.round(response.data.main.temp_min);
     let tempMax = Math.round(response.data.main.temp_max);
     let currentHigh = document.querySelector(".high");
-    currentHigh.textContent = `${tempMax}°F  |`;
+    currentHigh.textContent = `${tempMax}°F  | `;
     let currentLow = document.querySelector(".low");
     currentLow.textContent = `${tempMin}°F`;
     let description = document.querySelector(".description");
     description.textContent = response.data.weather[0].description;
+    let humidity = document.querySelector(".humidity");
+    humidity.textContent = `Humidity: ${response.data.main.humidity}%`;
+    let windSpeedElement = document.querySelector(".wind-speed");
+    let windSpeed = Math.round(response.data.wind.speed);
+    windSpeedElement.textContent = `Wind: ${windSpeed}mph`;
   });
   searchInput.value = "";
 }
@@ -72,7 +77,7 @@ function showTemp(position) {
     let tempMin = Math.round(response.data.main.temp_min);
     let tempMax = Math.round(response.data.main.temp_max);
     let currentHigh = document.querySelector(".high");
-    currentHigh.textContent = `${tempMax}°F  |`;
+    currentHigh.textContent = `${tempMax}°F  | `;
     let currentLow = document.querySelector(".low");
     currentLow.textContent = `${tempMin}°F`;
   });
@@ -93,10 +98,10 @@ function convert() {
   let highTemp = 80;
   let lowTemp = 65;
   if (isFarenheight) {
-    high.textContent = `${highTemp}°F`;
+    high.textContent = `${highTemp}°F | `;
     low.textContent = `${lowTemp}°F`;
   } else {
-    high.innerHTML = `${highTemp - 32}°C`;
+    high.innerHTML = `${highTemp - 32}°C | `;
     low.innerHTML = `${lowTemp - 32}°C`;
   }
 }

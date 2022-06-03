@@ -20,12 +20,24 @@
     0px 1px 10px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
+.more-info {
+  list-style: none;
+  padding-left: 0;
+}
+
+.humidity {
+  font-weight: 200;
+}
+
+.wind-speed {
+  font-weight: 200;
+}
+
 h1 {
   font-weight: 400;
   transition: all 0.2s ease-in-out;
   line-height: 0.8;
   display: inline;
-  margin-right: 10px;
 }
 
 h1:hover {
@@ -40,12 +52,12 @@ h1:hover {
 .location {
   font-size: 14px;
   padding: 5px 10px;
-  margin: 10px auto 0;
+  margin: 0 auto;
 }
 .convert {
   font-size: 14px;
   padding: 5px 10px;
-  margin: 10px auto 0;
+  margin: 0 auto;
 }
 
 .current-date {
@@ -144,7 +156,7 @@ h1:hover {
     padding: 0px 20px 10px;
   }
   .current {
-    margin: 40px auto 0;
+    margin: 30px auto 0;
     text-align: center;
   }
   h1 {

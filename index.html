@@ -10,8 +10,14 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script src="https://kit.fontawesome.com/eee799709d.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/eee799709d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/app.css" />
     <title>Five Day Forecast</title>
   </head>
@@ -19,21 +25,33 @@
     <div class="container">
       <div class="row">
         <div class="col-md current">
-          <h1></h1><div class="current-degree"><span class="high"></span><span class="low"></span></div>
-          <p class="current-date"></p>
-          <p class="description"></p>
+          <h1></h1>
+          <div class="current-degree">
+            <span class="high"></span><span class="low"></span>
+          </div>
+          <ul class="more-info">
+            <li class="current-date"></li>
+            <li class="description"></li>
+            <li class="humidity"></li>
+            <li class="wind-speed"></li>
+          </ul>
           <button class="btn btn-light location">Current Location</button>
-           <button class="btn btn-light convert">Convert Temp</button>
+          <button class="btn btn-light convert">Convert Temp</button>
         </div>
         <div class="col-md search">
           <form action="" id="search">
             <label for="search"></label>
-            <input  type="search" name="search" placeholder="Search" class="search-box">
-           <button type="submit" class="btn btn-light go">Go</button>
+            <input
+              type="search"
+              name="search"
+              placeholder="Search"
+              class="search-box"
+            />
+            <button type="submit" class="btn btn-light go">Go</button>
           </form>
         </div>
-      </div> 
-    <div class="row forecast">
+      </div>
+      <!-- <div class="row forecast">
         <div class="col-sm forecast-day">
           <h2>Wed</h2>
           <h3>4/27</h3>
@@ -87,8 +105,7 @@
           </div>
           <p class="degree">73° | 85°</p>
           <p class="precipitation">20%</p>
-        </div>
-       
+        </div> -->
     </div>
     <script src="src/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
