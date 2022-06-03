@@ -66,6 +66,8 @@ function returnCity(event) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+    let convertBtn = document.querySelector(".convert");
+    convertBtn.style.visibility = "visible";
   });
   searchInput.value = "";
 }
