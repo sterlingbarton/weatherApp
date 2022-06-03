@@ -22,7 +22,8 @@
 
 .more-info {
   list-style: none;
-  padding-left: 0;
+  margin: 20px;
+  padding: 0;
 }
 
 .humidity {
@@ -231,7 +232,7 @@ h1:hover {
     margin-top: 25px;
   }
   .current {
-    padding-left: 35px;
+    padding-left: 15px;
     text-align: left;
   }
   .description {
@@ -287,8 +288,11 @@ h1:hover {
   .current-date {
     font-size: 24px;
   }
+  .more-info {
+    font-size: 20px;
+  }
   .description {
-    font-size: 24px;
+    font-size: 20px;
   }
   #search {
     margin: 38px 10px;
@@ -308,9 +312,6 @@ h1:hover {
     font-size: 26px;
     margin-bottom: 10px;
     margin-top: 10px;
-  }
-  .description {
-    font-size: 26px;
   }
   h3 {
     font-size: 20px;
