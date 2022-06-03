@@ -22,7 +22,7 @@
 
 .more-info {
   list-style: none;
-  margin: 20px;
+  margin: 0 20px 10px;
   padding: 0;
 }
 
@@ -121,6 +121,8 @@ h1:hover {
 
 .icon {
   font-size: 40px;
+  width: 80px;
+  visibility: hidden;
 }
 
 .prediction {
@@ -150,6 +152,11 @@ h1:hover {
   margin: 30px 0;
 }
 
+.github {
+  position: relative;
+  left: 52px;
+  top: 10px;
+}
 @media (min-width: 200px) {
   .container {
     margin: 0 auto;
@@ -157,7 +164,7 @@ h1:hover {
     padding: 0px 20px 10px;
   }
   .current {
-    margin: 30px auto 0;
+    margin: 10px auto 0;
     text-align: center;
   }
   h1 {
@@ -165,7 +172,7 @@ h1:hover {
   }
   .current-date {
     font-size: 16px;
-    margin: 15px auto;
+    margin: 0 auto;
   }
   .description {
     font-size: 14px;
@@ -229,7 +236,8 @@ h1:hover {
 
 @media (min-width: 768px) {
   .container {
-    margin-top: 25px;
+    margin-top: 45px;
+    padding-bottom: 20px;
   }
   .current {
     padding-left: 15px;

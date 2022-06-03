@@ -1,3 +1,5 @@
+let icon = document.querySelector("img");
+
 let now = new Date();
 let days = [
   "Sunday",
@@ -58,6 +60,12 @@ function returnCity(event) {
     let windSpeedElement = document.querySelector(".wind-speed");
     let windSpeed = Math.round(response.data.wind.speed);
     windSpeedElement.textContent = `Wind: ${windSpeed}mph`;
+    let icon = document.querySelector("img");
+    icon.style.visibility = "visible";
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   });
   searchInput.value = "";
 }
