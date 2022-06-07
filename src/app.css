@@ -23,8 +23,9 @@
 
 .more-info {
   list-style: none;
-  margin: 0 20px 10px;
+  margin: 0;
   padding: 0;
+  padding-bottom: 10px;
 }
 
 .humidity {
@@ -37,13 +38,8 @@
 
 h1 {
   font-weight: 400;
-  transition: all 0.2s ease-in-out;
   line-height: 0.8;
   display: inline;
-}
-
-h1:hover {
-  transform: scale(1.05);
 }
 
 .current-degree {
@@ -53,7 +49,7 @@ h1:hover {
 
 .location {
   font-size: 14px;
-  padding: 5px 10px;
+  padding: 5px 30px;
   margin: 0 auto;
 }
 .convert {
@@ -74,6 +70,7 @@ h1:hover {
 
 #search {
   width: 100%;
+  margin: 0 auto;
 }
 
 #search input {
@@ -98,16 +95,11 @@ h1:hover {
 }
 
 .forecast-day {
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   flex-direction: column;
   padding: 20px 10px;
   text-align: center;
-  transition: all 0.2s ease-in-out;
-}
-
-.forecast-day:hover {
-  transform: scale(1.05);
 }
 
 .forecast-day > h2 {
@@ -119,14 +111,9 @@ h1:hover {
 }
 
 .icon {
-  font-size: 40px;
   width: 80px;
-  visibility: hidden;
-}
-
-.prediction {
-  line-height: 1.2;
-  font-weight: 200;
+  padding: 0;
+  margin: 0 auto;
 }
 
 .degree {
@@ -137,10 +124,6 @@ h1:hover {
 .precipitation {
   font-size: 16px;
   font-weight: 100;
-}
-
-.prediction-container {
-  height: 130px;
 }
 
 .vertical-rule {
@@ -206,9 +189,6 @@ h1:hover {
   .vertical-rule {
     display: none;
   }
-  .prediction-container {
-    max-height: 120px;
-  }
 }
 
 @media (min-width: 300px) {
@@ -238,20 +218,23 @@ h1:hover {
     padding-bottom: 20px;
   }
   .current {
-    padding-left: 15px;
+    padding-left: 50px;
     text-align: left;
     margin-top: 20px;
+  }
+  .current-degree {
+    display: block;
   }
   .description {
     margin-top: 0;
     padding-top: 0;
   }
   #search {
-    margin-top: 38px;
+    margin-top: 38px auto;
   }
   .forecast {
     flex-direction: row;
-    height: 55vh;
+    height: 24vh;
     margin: 15px;
     margin-top: 10px;
     padding: 0;
@@ -261,39 +244,22 @@ h1:hover {
     border: none;
   }
   h1 {
-    font-size: 20px;
+    font-size: 24px;
   }
   h2 {
-    padding-bottom: 0;
     font-size: 22px;
   }
   h3 {
-    padding-top: 0;
     font-size: 20px;
-  }
-  .icon {
-    padding: 0;
-    margin: 0 auto;
   }
   .vertical-rule {
     display: block;
-  }
-  .prediction-container {
-    max-height: none;
-    height: 100px;
-  }
-  .prediction {
-    line-height: 1.1;
-    font-size: 12px;
-  }
-  section {
-    margin-left: 18px;
   }
 }
 
 @media (min-width: 992px) {
   h1 {
-    font-size: 20px;
+    font-size: 24px;
   }
   .current-degree {
     font-size: 20px;
@@ -307,14 +273,8 @@ h1:hover {
   .description {
     font-size: 20px;
   }
-  #search {
-    margin: 38px 10px;
-  }
   .current {
     padding-left: 35px;
-  }
-  .prediction {
-    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
@@ -329,13 +289,10 @@ h1:hover {
     font-size: 20px;
   }
   .container {
-    margin: 10px auto;
+    margin: 30px auto;
   }
   .current {
     margin: 0 auto;
     padding: 20px 0 0 35px;
-  }
-  .forcast {
-    height: 30vh;
   }
 }

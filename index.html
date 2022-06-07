@@ -24,25 +24,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md current">
-          <img class="icon" src="" alt="Icon" />
-          <h1></h1>
-          <div class="current-degree">
-            <span class="high"></span><span class="low"></span>
-          </div>
-          <ul class="more-info">
-            <li class="current-date"></li>
-            <li class="description"></li>
-            <li class="humidity"></li>
-            <li class="wind-speed"></li>
-          </ul>
-          <section>
-            <button class="btn btn-light location">Current Location</button>
-            <button class="btn btn-light convert">Convert Temp</button>
-          </section>
-        </div>
-        <div class="col-md search">
-          <form action="" id="search">
+         <form action="" id="search">
             <label for="search"></label>
             <input
               type="search"
@@ -51,17 +33,31 @@
               class="search-box"
             />
             <button type="submit" class="btn btn-light go">Go</button>
+             <button class="btn btn-light location">Current Location</button>
           </form>
+        <div class="current">
+          <img class="icon" src="" alt="Icon" />
+          <h1></h1>
+          <div class="current-degree">
+            <span class="high"></span><span class="low"></span>
+          </div>
+
+          <ul class="more-info">
+            <li class="current-date"></li>
+            <li class="description"></li>
+            <li class="humidity"></li>
+            <li class="wind-speed"></li>
+          </ul>
+          <section>
+            <button class="btn btn-light convert">Convert Temp</button>
+          </section>
         </div>
       </div>
-      <!-- <div class="row forecast">
+      <div class="row forecast">
         <div class="col-sm forecast-day">
           <h2>Wed</h2>
           <h3>4/27</h3>
-          <p class="icon">☀️</p>
-          <div class="prediction-container">
-            <p class="prediction">Plenty of sunshine during the day. A few passing clouds at night.</p>
-          </div>
+           <img class="icon" src="" alt="Icon" />
           <p class="degree">61° | 81°</p>
           <p class="precipitation">1%</p>
         </div>
@@ -69,10 +65,7 @@
         <div class="col-sm forecast-day">
           <h2>Thurs</h2>
           <h3>4/28</h3>
-          <p class="icon">⛅</p>
-          <div class="prediction-container">
-            <p class="prediction">Partly to mostly cloudy during the day. A few clouds at night.</p>
-          </div>
+           <img class="icon" src="" alt="Icon" />
           <p class="degree">66° | 83°</p>
           <p class="precipitation">7%</p>
         </div>
@@ -80,10 +73,7 @@
         <div class="col-sm forecast-day">
           <h2>Fri</h2>
           <h3>4/29</h3>
-          <p class="icon">⛅</p>
-          <div class="prediction-container">
-            <p class="prediction">Partly cloudy during the day. Partly cloudy at night.</p>
-          </div>
+           <img class="icon" src="" alt="Icon" />
             <p class="degree">71° | 84°</p>
           <p class="precipitation">8%</p>
         </div>
@@ -91,10 +81,7 @@
         <div class="col-sm forecast-day">
           <h2>Sat</h2>
           <h3>4/30</h3>
-          <p class="icon">⛈️</p>
-          <div class="prediction-container">
-            <p class="prediction">Scattered showers and thunderstorms in the afternoon. Cloudy skies at night.</p>
-          </div>
+          <img class="icon" src="" alt="Icon" />
           <p class="degree">72° | 86°</p>
           <p class="precipitation">40%</p>
         </div>
@@ -102,13 +89,10 @@
         <div class="col-sm forecast-day">
           <h2>Sun</h2>
           <h3>5/1</h3>
-          <p class="icon">🌧️</p>
-          <div class="prediction-container">
-          <p class="prediction">A stray shower or thunderstorm is possible. Isolated thunderstorms developing at night.</p>
-          </div>
+           <img class="icon" src="" alt="Icon" />
           <p class="degree">73° | 85°</p>
           <p class="precipitation">20%</p>
-        </div> -->
+        </div>
     </div>
     <a class="github" href="https://github.com/sterlingbarton/weatherApp"
       >Open-Source Code by Sterling Barton</a

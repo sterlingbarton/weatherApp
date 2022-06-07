@@ -98,7 +98,6 @@ function showTemp(position) {
     let windSpeed = Math.round(response.data.wind.speed);
     windSpeedElement.textContent = `Wind: ${windSpeed}mph`;
     let icon = document.querySelector("img");
-    icon.style.visibility = "visible";
     icon.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
