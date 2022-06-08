@@ -49,13 +49,14 @@ h1 {
 
 .location {
   font-size: 14px;
-  padding: 5px 30px;
-  margin: 0 auto;
+  margin-left: 5px;
+}
+.go {
+  margin-left: 5px;
 }
 .convert {
   font-size: 14px;
   padding: 5px 10px;
-  margin: 0 auto;
 }
 
 .current-date {
@@ -98,7 +99,6 @@ h1 {
   justify-content: space-around;
   display: flex;
   flex-direction: column;
-  padding: 20px 10px;
   text-align: center;
 }
 
@@ -142,49 +142,55 @@ h1 {
   .container {
     margin: 0 auto;
     border: none;
-    padding: 0px 20px 10px;
+    padding: 0px 15px 10px;
+  }
+  .heading {
+    margin-bottom: -20px;
   }
   .current {
-    margin: 10px auto 0;
+    margin: 10px auto;
     text-align: center;
   }
   h1 {
-    font-size: 22px;
+    font-size: 26px;
   }
   .current-date {
     font-size: 16px;
-    margin: 0 auto;
+  }
+  .current-degree {
+    font-size: 18px;
   }
   .description {
     font-size: 14px;
-    margin: 0 auto;
-    padding: 0;
-  }
-  .search {
-    margin: 0 auto;
   }
   #search {
+    margin: 20px auto 0;
     display: flex;
     max-height: 2rem;
-    margin: 20px auto;
-    width: 80%;
+    width: 90%;
   }
   .forecast {
     flex-direction: column;
     margin: 0 auto 15px;
   }
   .forecast-day {
-    padding-bottom: 10px;
+    padding-top: 10px;
     border-bottom: 1px solid #d3d3d3;
   }
   .forecast-day:nth-last-of-type(1) {
     border-bottom: none;
   }
   h2 {
-    font-size: 26px;
+    font-size: 20px;
   }
   h3 {
     font-size: 18px;
+  }
+  .precipitation {
+    padding: 0;
+  }
+  .degree {
+    margin: 5px auto;
   }
   .vertical-rule {
     display: none;
@@ -193,7 +199,10 @@ h1 {
 
 @media (min-width: 300px) {
   h1 {
-    font-size: 22px;
+    margin-bottom: none;
+  }
+  .location {
+    display: block;
   }
   .current-date {
     font-size: 20px;
@@ -201,11 +210,8 @@ h1 {
   .description {
     font-size: 16px;
   }
-  .current-date {
-    font-size: 18px;
-  }
   h2 {
-    font-size: 30px;
+    font-size: 22px;
   }
   h3 {
     font-size: 20px;
@@ -214,29 +220,32 @@ h1 {
 
 @media (min-width: 768px) {
   .container {
-    margin-top: 30px;
     padding-bottom: 20px;
   }
   .current {
-    padding-left: 50px;
-    text-align: left;
+    text-align: center;
     margin-top: 20px;
   }
   .current-degree {
-    display: block;
+    font-size: 26px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .current-date {
+    font-size: 22px;
+    margin-bottom: 5px;
   }
   .description {
-    margin-top: 0;
-    padding-top: 0;
+    font-size: 22px;
+    margin-bottom: 5px;
   }
   #search {
-    margin-top: 38px auto;
+    margin: 38px auto 0;
   }
   .forecast {
     flex-direction: row;
     height: 24vh;
     margin: 15px;
-    margin-top: 10px;
     padding: 0;
   }
   .forecast-day {
@@ -244,7 +253,7 @@ h1 {
     border: none;
   }
   h1 {
-    font-size: 24px;
+    font-size: 30px;
   }
   h2 {
     font-size: 22px;
@@ -258,41 +267,39 @@ h1 {
 }
 
 @media (min-width: 992px) {
-  h1 {
-    font-size: 24px;
-  }
   .current-degree {
-    font-size: 20px;
+    font-size: 26px;
   }
   .current-date {
-    font-size: 20px;
+    font-size: 26px;
   }
   .more-info {
-    font-size: 20px;
+    font-size: 18px;
   }
   .description {
-    font-size: 20px;
-  }
-  .current {
-    padding-left: 35px;
+    font-size: 22px;
   }
 }
 @media (min-width: 1200px) {
   h1 {
-    font-size: 24px;
+    font-size: 34px;
+  }
+  .current {
+    margin-top: 5px;
+  }
+  .heading {
+    margin-bottom: -35px;
+  }
+  .icon {
+    width: 120px;
   }
   .current-date {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 28px;
   }
-  h3 {
-    font-size: 20px;
+  .description {
+    font-size: 26px;
   }
   .container {
     margin: 30px auto;
-  }
-  .current {
-    margin: 0 auto;
-    padding: 20px 0 0 35px;
   }
 }
