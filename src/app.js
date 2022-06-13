@@ -112,6 +112,11 @@ function getLocation() {
 let current = document.querySelector(".location");
 current.addEventListener("click", getLocation);
 
+let highTemp = document.querySelector(".high");
+let lowTemp = document.querySelector(".low");
+highTemp.addEventListener("click", convert);
+lowTemp.addEventListener("click", convert);
+
 let isFarenheight = true;
 function convert() {
   isFarenheight = !isFarenheight;
@@ -127,6 +132,3 @@ function convert() {
     low.innerHTML = `${lowTemp - 32}°C`;
   }
 }
-
-let convertBtn = document.querySelector(".convert");
-convertBtn.addEventListener("click", convert);

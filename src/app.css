@@ -47,6 +47,10 @@ h1 {
   display: inline;
 }
 
+.current-degree:hover {
+  cursor: pointer;
+}
+
 .location {
   font-size: 14px;
   margin-left: 5px;
