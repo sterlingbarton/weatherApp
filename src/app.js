@@ -13,6 +13,7 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
+
 let months = [
   "January",
   "February",
@@ -37,6 +38,7 @@ displayDate.textContent = `${day}, ${fullDate}`;
 
 let search = document.querySelector("#search");
 let searchInput = document.querySelector(".search-box");
+let forcastContainer = document.querySelector(".forecast-container");
 
 function returnCity(event) {
   event.preventDefault();
@@ -76,11 +78,14 @@ search.addEventListener("submit", returnCity);
 
 let latitude = "";
 let longitude = "";
+let forecast = [];
 function showTemp(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=0dc80dcac647130267c51a963d637c8f`;
-  axios.get(apiUrl).then(function (response) {
+  let apiKey = "ea915c51860741b81bf01c810278b539";
+  let apiUrl1 = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
+  let apiUrl2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely,alerts&units=imperial&appid=${apiKey}`;
+  axios.get(apiUrl1).then(function (response) {
     let heading = document.querySelector("h1");
     let location = response.data.name;
     heading.textContent = location;
@@ -103,6 +108,37 @@ function showTemp(position) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   });
+  axios
+    .get(apiUrl2)
+    .then(function (response) {
+      let forecastArr = [];
+      let apiForecast = response.data.daily;
+      apiForecast.forEach(function (forecastDay) {
+        let forecastDayInfo = {
+          date: forecastDay.dt,
+          iconSRC: `http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`,
+          degree: `${Math.round(forecastDay.temp.max)}°F | ${Math.round(
+            forecastDay.temp.min
+          )}°F`,
+        };
+        forecastArr.push(forecastDayInfo);
+        forecast = forecastArr.slice(0, 5);
+      });
+    })
+    .then(function () {
+      const week = forecast.map(function (day) {
+        return `<div class="col-sm forecast-day">
+          <h2></h2>
+          <h3>${now.getMonth()}/${date}</h3>
+           <img class="icon" src="${day.iconSRC}" alt="Icon" />
+          <p class="degree">${day.degree}</p>
+        </div>
+        `;
+      });
+      forcastContainer.innerHTML = week.join(
+        `<div class="vertical-rule"></div>`
+      );
+    });
 }
 
 function getLocation() {

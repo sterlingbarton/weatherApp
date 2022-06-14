@@ -248,13 +248,15 @@ h1 {
   }
   .forecast {
     flex-direction: row;
-    height: 24vh;
-    margin: 15px;
+    margin: 0 auto;
     padding: 0;
+    border: none;
+    box-shadow: none;
   }
   .forecast-day {
     width: 50px;
     border: none;
+    padding-bottom: 10px;
   }
   h1 {
     font-size: 30px;
@@ -264,9 +266,24 @@ h1 {
   }
   h3 {
     font-size: 20px;
+    margin: 0 auto;
+  }
+  .icon {
+    margin: 0 auto;
   }
   .vertical-rule {
     display: block;
+    height: 14vh;
+  }
+  .degree {
+    font-size: 14px;
+    margin: 0 auto;
+  }
+  .more-info {
+    padding-bottom: 0;
+  }
+  .github {
+    font-size: 12px;
   }
 }
 
@@ -282,6 +299,9 @@ h1 {
   }
   .description {
     font-size: 22px;
+  }
+  .degree {
+    font-size: 16px;
   }
 }
 @media (min-width: 1200px) {
