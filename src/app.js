@@ -53,29 +53,63 @@ function returnCity(event) {
   let newString = string.replace(firstLetter, cap);
   let heading = document.querySelector("h1");
   heading.textContent = newString;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newString}&units=imperial&appid=0dc80dcac647130267c51a963d637c8f`;
+  let apiKey = "ea915c51860741b81bf01c810278b539";
+  let apiUrl1 = `https://api.openweathermap.org/data/2.5/weather?q=${newString}&units=imperial&appid=0dc80dcac647130267c51a963d637c8f`;
 
-  axios.get(apiUrl).then(function (response) {
-    let tempMin = Math.round(response.data.main.temp_min);
-    let tempMax = Math.round(response.data.main.temp_max);
-    let currentHigh = document.querySelector(".high");
-    currentHigh.textContent = `${tempMax}°F  | `;
-    let currentLow = document.querySelector(".low");
-    currentLow.textContent = `${tempMin}°F`;
-    let description = document.querySelector(".description");
-    description.textContent = response.data.weather[0].description;
-    let humidity = document.querySelector(".humidity");
-    humidity.textContent = `Humidity: ${response.data.main.humidity}%`;
-    let windSpeedElement = document.querySelector(".wind-speed");
-    let windSpeed = Math.round(response.data.wind.speed);
-    windSpeedElement.textContent = `Wind: ${windSpeed}mph`;
-    let icon = document.querySelector("img");
-    icon.style.visibility = "visible";
-    icon.setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  });
+  axios
+    .get(apiUrl1)
+    .then(function (response) {
+      let tempMin = Math.round(response.data.main.temp_min);
+      let tempMax = Math.round(response.data.main.temp_max);
+      let currentHigh = document.querySelector(".high");
+      currentHigh.textContent = `${tempMax}°F  | `;
+      let currentLow = document.querySelector(".low");
+      currentLow.textContent = `${tempMin}°F`;
+      let description = document.querySelector(".description");
+      description.textContent = response.data.weather[0].description;
+      let humidity = document.querySelector(".humidity");
+      humidity.textContent = `Humidity: ${response.data.main.humidity}%`;
+      let windSpeedElement = document.querySelector(".wind-speed");
+      let windSpeed = Math.round(response.data.wind.speed);
+      windSpeedElement.textContent = `Wind: ${windSpeed}mph`;
+      let icon = document.querySelector("img");
+      icon.style.visibility = "visible";
+      icon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
+      return response;
+    })
+    .then(function (response) {
+      let apiUrl2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}&exclude=hourly,minutely,alerts&units=imperial&appid=${apiKey}`;
+      axios.get(apiUrl2).then(function (response) {
+        let forecastArr = [];
+        let apiForecast = response.data.daily;
+        apiForecast.forEach(function (forecastDay) {
+          let forecastDayInfo = {
+            date: forecastDay.dt,
+            iconSRC: `http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`,
+            degree: `${Math.round(forecastDay.temp.max)}°F | ${Math.round(
+              forecastDay.temp.min
+            )}°F`,
+          };
+          forecastArr.push(forecastDayInfo);
+          forecast = forecastArr.slice(0, 5);
+        });
+        const week = forecast.map(function (forecastDay) {
+          return `<div class="col-sm forecast-day">
+          <h2>${formatDate(forecastDay.date)}</h2>
+           <img class="icon" src="${forecastDay.iconSRC}" alt="Icon" />
+          <p class="degree">${forecastDay.degree}</p>
+        </div>
+        `;
+        });
+        forcastContainer.innerHTML = week.join(
+          `<div class="vertical-rule"></div>`
+        );
+      });
+    });
+
   searchInput.value = "";
 }
 
