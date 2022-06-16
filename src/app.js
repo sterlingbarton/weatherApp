@@ -1,5 +1,4 @@
 let icon = document.querySelector("img");
-
 getLocation();
 
 let now = new Date();
@@ -30,6 +29,12 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let date = now.getDate();
+function formatDate(day) {
+  let date = new Date(day * 1000);
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let formatDay = days[date.getDay()];
+  return formatDay;
+}
 let time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 let fullDate = `${month} ${date} ${time}`;
 
@@ -126,12 +131,11 @@ function showTemp(position) {
       });
     })
     .then(function () {
-      const week = forecast.map(function (day) {
+      const week = forecast.map(function (forecastDay) {
         return `<div class="col-sm forecast-day">
-          <h2></h2>
-          <h3>${now.getMonth()}/${date}</h3>
-           <img class="icon" src="${day.iconSRC}" alt="Icon" />
-          <p class="degree">${day.degree}</p>
+          <h2>${formatDate(forecastDay.date)}</h2>
+           <img class="icon" src="${forecastDay.iconSRC}" alt="Icon" />
+          <p class="degree">${forecastDay.degree}</p>
         </div>
         `;
       });
